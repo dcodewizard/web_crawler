@@ -12,7 +12,7 @@
  */
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 
 /**
@@ -25,15 +25,25 @@ use Illuminate\Http\Request;
  * @link     https://laravel.com/
  */
 
-class PageController extends Controller
+class SitemapController extends Controller
 {
     /**
-     * Display the "not found" page.
+     * Display the "index" page.
      *
      * @return \Illuminate\View\View
      */
-    public function notfound()
+    public function index()
     {
-        return view('404');
+        $sitemapFilePath = public_path('sitemap.html');
+        if (!file_exists($sitemapFilePath)) {
+            return response()->json(['error' => 'Sitemap file not found'], 404);
+        }
+        try {
+            return response()->file($sitemapFilePath);
+        } catch (\Exception $e) {
+            return response()->json(
+                ['error' => 'Error while returning the sitemap file'], 500
+            );
+        }
     }
 }

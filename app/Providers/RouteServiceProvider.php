@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ * php version 7.2
+ *
+ * @category Web_Framework
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
+
 namespace App\Providers;
 
 use Illuminate\Cache\RateLimiting\Limit;
@@ -7,6 +18,16 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+
+/**
+ * Class
+ *
+ * @category Controller
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -17,8 +38,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
-
+    public const HOME = '/';
     /**
      * The controller namespace for the application.
      *
@@ -37,16 +57,18 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->configureRateLimiting();
 
-        $this->routes(function () {
-            Route::prefix('api')
-                ->middleware('api')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/api.php'));
+        $this->routes(
+            function () {
+                Route::prefix('api')
+                    ->middleware('api')
+                    ->namespace($this->namespace)
+                    ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/web.php'));
-        });
+                Route::middleware('web')
+                    ->namespace($this->namespace)
+                    ->group(base_path('routes/web.php'));
+            }
+        );
     }
 
     /**
@@ -56,8 +78,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function configureRateLimiting()
     {
-        RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
-        });
+        RateLimiter::for(
+            'api', function (Request $request) {
+                return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
+            }
+        );
     }
 }

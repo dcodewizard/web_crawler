@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ * php version 7.2
+ *
+ * @category Web_Framework
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -7,6 +18,16 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+/**
+ * Class
+ *
+ * @category Controller
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
 
 class AuthenticatedSessionController extends Controller
 {
@@ -23,7 +44,8 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      *
-     * @param  \App\Http\Requests\Auth\LoginRequest  $request
+     * @param \App\Http\Requests\Auth\LoginRequest $request comment
+     * 
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(LoginRequest $request)
@@ -38,7 +60,8 @@ class AuthenticatedSessionController extends Controller
     /**
      * Destroy an authenticated session.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request comment
+     * 
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Request $request)

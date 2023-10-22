@@ -9,6 +9,12 @@
 7. npm run dev
 8. php artisan serve to launch a development server, and you can access your application by visiting `http://localhost:8000` in your web browser.
 
+## Routes
+
+1. http://localhost:8000/ (Homepage)
+2. http://localhost:8000/get-homepage-links (Results page after input on Homepage)
+3. http://localhost:8000/sitemap (To view the sitemap file saved in public directory)
+
 ## The problem to be solved in your own words
 
 The problem to be solved is to create a back-end admin page where the admin can log in and manually trigger a crawl of a website. The crawl should extract all internal hyperlinks from the website, store the results temporarily in the database, and display them on the admin page. Additionally, the crawl should be scheduled to run automatically every hour.

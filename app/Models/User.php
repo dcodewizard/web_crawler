@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ * php version 7.2
+ *
+ * @category Web_Framework
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
+
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -8,9 +19,21 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class
+ *
+ * @category Controller
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
+
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.

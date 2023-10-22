@@ -1,9 +1,30 @@
 <?php
 
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ * php version 7.2
+ *
+ * @category Web_Framework
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
+
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+
+/**
+ * Class
+ *
+ * @category Controller
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
 
 class Handler extends ExceptionHandler
 {
@@ -34,8 +55,10 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
+        $this->reportable(
+            function (Throwable $e) {
+                //
+            }
+        );
     }
 }

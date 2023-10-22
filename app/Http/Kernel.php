@@ -1,9 +1,29 @@
 <?php
 
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ * php version 7.4
+ *
+ * @category Web_Framework
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
+
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
+/**
+ * Class Kernel
+ *
+ * @category Controller
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ * @license  https://laravel.com/ MIT
+ * @link     https://laravel.com/
+ */
 class Kernel extends HttpKernel
 {
     /**
